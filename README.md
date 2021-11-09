@@ -48,5 +48,5 @@ It can be used to handle and manipulate all classes utilized by the application 
 * Update
 
 ## Done by
-`Emmanuel Arthur`
+`Emmanuel Arthur` and 
 `Abubakarr Bangura`
