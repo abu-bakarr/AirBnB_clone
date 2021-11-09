@@ -46,3 +46,7 @@ It can be used to handle and manipulate all classes utilized by the application 
 * All
 * Count
 * Update
+
+## Done by
+`Emmanuel Arthur`
+`Abubakarr Bangura`
