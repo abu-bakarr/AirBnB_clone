@@ -7,7 +7,7 @@ import json
 
 class FileStorage:
     'FileStorage class'
-    __file_path = "./file.json"
+    __file_location = "./file.json"
     __objects = {}
 
     def all(self):
@@ -32,7 +32,7 @@ class FileStorage:
         for keys in FileStorage.__objects.keys():
             new_dict[keys] = (FileStorage.__objects[keys]).to_json()
 
-        with open(self.__file_path, mode="w", encoding="utf-8") as f:
+        with open(self.__file_location, mode="w", encoding="utf-8") as f:
             json.dump(new_dict, f)
 
     def reload(self):
@@ -49,7 +49,7 @@ class FileStorage:
                    'State': State, 'City': City, 'Amenity': Amenity,
                    'Review': Review}
         try:
-            with open(FileStorage.__file_path,
+            with open(FileStorage.__file_location,
                       mode="r", encoding="utf-8") as f:
                 reloaded = json.load(f)
                 for k, v in reloaded.items():

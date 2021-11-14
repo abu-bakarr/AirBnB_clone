@@ -1,25 +1,24 @@
 #!/usr/bin/python3
-""" Unit tests for AirBnB console """
+'Test for console.py'
 
+from unittest.mock import create_autospec
+from console import HBNBCommand
 import unittest
-import console
-import pep8
+import sys
 
 
-class Test_Amenity(unittest.TestCase):
-    """Base class tests"""
+class TestConsole(unittest.TestCase):
+    'test console.py'
+    def setUp(self):
+        'setUp mock stdin and stdout'
+        self.mock_stdin = create_autospec(sys.stdin)
+        self.mock_stdout = create_autospec(sys.stdout)
 
-    def test_pep8_conformance_amenity(self):
-        """Test that we conform to PEP8."""
-        pep8pattern = pep8.StyleGuide(quiet=True)
-        result = pep8pattern.check_files(['console.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code patterns errors (and warnings).")
+    def create(self, server=None):
+        'test create'
+        return HBNBCommand(stdin=self.mock_stdin, stdout=self.mock_stdout)
 
-    def test_docstring(self):
-        """ Test documentation """
-        self.assertIsNotNone(console.__doc__)
-        self.assertIsNotNone(console.HBNBCommand.__doc__)
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_exit(self):
+        'test exit'
+        cmd = self.create()
+        self.assertRaises(SystemExit, quit)
