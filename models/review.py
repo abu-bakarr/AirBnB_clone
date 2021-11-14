@@ -5,12 +5,14 @@ from models import storage
 from models.base_model import BaseModel
 
 
-class City(BaseModel):
-    state_id = ""
-    name = ""
+class Review(BaseModel):
+
+    place_id = ""
+    user_id = ""
+    text = ""
 
     def __init__(self, *args, **kwargs):
-        '__init__ func City'
+        '__init__ method for review'
         if len(kwargs) > 0:
             self.__dict__ = kwargs
         else:

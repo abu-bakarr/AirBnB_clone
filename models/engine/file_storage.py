@@ -2,8 +2,6 @@
 import uuid
 import json
 
-'File storage module'
-
 
 class FileStorage:
     'FileStorage class'
