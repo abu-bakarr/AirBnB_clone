@@ -66,7 +66,7 @@
 
 .filters .locations h3,
 .filters .amenities h3 {
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 0;
     margin-left: 60px;
 }
@@ -74,4 +74,12 @@
 .locations:hover .popover,
 .amenities:hover .popover {
     display: block;
+}
+
+.popover ul {
+    list-style-type: none;
+}
+
+.popover ul.list_1 {
+    margin-top: 0px;
 }
