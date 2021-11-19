@@ -1,0 +1,1 @@
+this exercis is for static web
